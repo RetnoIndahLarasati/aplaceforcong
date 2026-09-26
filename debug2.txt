@@ -1,0 +1,49 @@
+function setupInteractiveElements() {
+
+    const interactives = document.querySelectorAll('.interactive-element');
+
+    interactives.forEach(el => {
+
+        el.addEventListener('click', function() {
+
+            this.style.transform = 'scale(0.9)';
+
+            setTimeout(() => this.style.transform = '', 150);
+
+            const popup = this.querySelector('.popup-msg');
+
+            if (popup) {
+
+                popup.classList.toggle('hidden');
+
+                setTimeout(() => popup.classList.add('hidden'), 3000);
+
+            }
+
+            
+
+            if (this.id === 'bubble-secret') {
+
+                this.innerHTML = '💥';
+
+                setTimeout(() => {
+
+                    this.innerHTML = '<span class="icon">🫧</span>';
+
+                }, 1000);
+
+            }
+
+        });
+
+    });
+
+}
+
+function setupLightbox() {
+
+    const lightbox = document.getElementById('lightbox');
+
+    const lbImg = document.getElementById('lightbox-img');
+
+    const lbCaption = document.getElement

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Little Ocean</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-fish">🐠</div>
+        <p>Swimming to your ocean...</p>
+    </div>
+
+    <div id="ocean-background"></div>
+
+    <button id="btn-play-game" class="play-btn hidden">Play It! 🎮</button>
+    <button id="btn-reply-msg" class="reply-btn hidden">Balas 💌</button>
+
+    <div id="music-player" class="floating-btn">
+        <span id="music-icon">🎵</span>
+    </div>
+
+    <!-- NEW MUSIC WIDGET -->
+    <div id="music-widget" class="glass-widget hidden">
+        <button id="close-music">✖</button>
+        <div class="music-cover">
+            <img id="music-cover-img" src="" alt="Cover Art">
+        </div>
+        <div class="music-info">
+            <h4 id="music-title">Song Title</h4>
+            <p id="music-artist">Artist</p>
+        </div>
+        <div class="music-progress">
+            <span id="music-current">0:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="music-duration">0:00</span>
+        </div>
+        <div class="music-controls">
+            <button id="btn-prev">⏮</button>
+            <button id="btn-play-pause">▶</button>
+            <button id="btn-next">⏭</button>
+        </div>
+        <div class="music-volume">
+            <span id="mute-icon">🔈</span>
+            <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+            <span>🔊</span>
+        </div>
+    </div>
+
+    <nav id="navbar" class="hidden">
+        <a href="#home-section" class="nav-bubble">Home</a>
+        <a href="#memories-section" class="nav-bubble">Memories</a>
+        <a href="#reasons-section" class="nav-bubble">Pearls</a>
+        <a href="#wishes-section" class="nav-bubble">Wishes</a>
+        <a href="#message-section" class="nav-bubble">Message</a>
+        <a href="#map-section" class="nav-bubble">Treasure</a>
+        <a href="#chat-section" class="nav-bubble">Chats</a>
+          <a href="#gallery-section" class="nav-bubble">Aquarium</a>
+    </nav>
+
+    <section id="landing">
+        <div class="landing-content" id="login-container">
+            <h1 class="title">Welcome to Your Little Ocean</h1>
+            <div class="login-form">
+                <input type="text" id="login-username" placeholder="Username">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="dive-btn" class="action-btn" style="margin-top: 10px;">Dive In</button>
+            </div>
+            <p id="login-msg" style="color: #81D4FA; margin-top: 15px; font-size: 0.95rem; font-family: Poppins, sans-serif;">(Guest can only play games & view chats)</p>
+        </div>
+    </section>
+
+    <main id="main-content" class="hidden">
+        
+        <section id="home-section" class="content-section" style="position: relative; overflow: hidden;">
+            <!-- GIANT BACKGROUND WHALES -->
+            <div class="giant-bg-obj left-obj">🐋</div>
+            <div class="giant-bg-obj right-obj">🐋</div>
+            <div class="home-title-frame">
+                <div class="boat-gimmick">⛵</div>
+                <h1 class="main-title">Selamat Sumpah Profesi, <span class="personal-name">Cong</span>!</h1>
+                <p class="subtitle">Just like the waves that never stop moving, you kept going until you reached this shore. You made it, Cong. And you deserve every bit of this happiness.</p>
+            </div>
+        </section>
+
+        <section id="memories-section" class="content-section">
+            <h3 class="section-title">Little memories that I treasure</h3>
+            <p class="subtitle">Sentuh / hover ikan buat berhentiin!</p>
+            <div class="aquarium-container" id="memories-container"></div>
+        </section>
+
+                <section id="reasons-section" class="content-section">
+            <h3 class="section-title">Per-Mangbaran</h3>
+            <p class="subtitle">Roblox jangan pernah pergi... Roblox jangan pernah pergi...</p>
+            
+            <div class="mabar-container" id="mabar-container"></div>
+
+            
+        </section>
+
+        <section id="wishes-section" class="content-section">
+            <h3 class="section-title">Floating Wishes</h3>
+            <p class="subtitle">Setiap ubur-ubur bawa satu doa. Sentuh mereka!</p>
+            <div class="jellyfish-container" id="jellyfish-container">
+            </div>
+        </section>
+
+        <section class="interactive-scatter">
+             <div class="interactive-element" id="starfish-secret">
+                <span class="icon">⭐</span>
+                <div class="popup-msg hidden">Keep shining bright!</div>
+            </div>
+            <div class="interactive-element" id="bubble-secret">
+                <span class="icon">🫧</span>
+            </div>
+            <div class="interactive-element" id="small-chest-secret">
+                <span class="icon">💎</span>
+                <div class="popup-msg hidden">You found a little treasure! But honestly, you’re the real treasure here.</div>
+            </div>
+        </section>
+
+        <section id="message-section" class="content-section">
+            <h3 class="section-title">A Letter From The Deep Sea</h3>
+            <p class="subtitle">Ada botol kaca yang terdampar, coba buka deh!</p>
+            <div class="bottle-container">
+                <div class="bottle" id="message-bottle">🍾</div>
+                <div class="scroll-paper hidden" id="opened-message">
+                    <button class="close-btn" id="close-message">✖</button>
+                    <h2 class="paper-title">✨ Untuk Ocong Aneh bin Ajaib ✨</h2>
+                    <div id="personal-message-text" class="paper-text">Message goes here...</div>
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- PETA HARTA KARUN INTERAKTIF -->
+        <section id="map-section" class="content-section" style="margin-top: 50px; text-align: center;">
+            <h3 class="section-title">Treasure Map 🗺️</h3>
+            <p class="subtitle">Geser kapal selam ke tanda ❌ untuk membuka harta karun!</p>
+            <div class="map-container" style="position: relative; max-width: 600px; margin: 30px auto; padding: 40px 20px; background: rgba(2, 119, 189, 0.4); border: 2px dashed rgba(255,255,255,0.5); border-radius: 20px;">
+                <input type="range" id="submarine-slider" min="0" max="100" value="0" style="width: 80%; margin-bottom: 20px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; width: 80%; margin: 0 auto; font-size: 1.5rem;">
+                    <span>🌊</span>
+                    <span>❌</span>
+                </div>
+                
+                <div id="treasure-reveal" style="opacity: 0; transform: translateY(20px); transition: all 1s; margin-top: 30px;">
+                    <h2 style="color: gold; font-family: 'Fredoka', sans-serif; font-size: 2.5rem; letter-spacing: 2px;">GUE BENCI BGT SAMA LU <3</h2>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- NEW CHAT SECTION -->
+        <section id="chat-section" class="content-section">
+            <h3 class="section-title">Caught in the Net</h3>
+            <p class="subtitle">Bebasin ikan yang ada di jaring!</p>
+            
+            <div class="net-container interactive-element" id="net-trigger">
+                <span class="net-icon">🕸️</span>
+                <span class="trapped-fish">🐟</span>
+            </div>
+            
+            <!-- Tempat ngambang gambar chat -->
+            <div id="floating-chats-container"></div>
+        </section>
+
+        <section id="gallery-section" class="content-section">
+            <h3 class="section-title">Treasured Moments</h3>
+            <p class="subtitle">Geser ke kanan dan kiri untuk melihat foto-foto imup di dalam akuarium ini!</p>
+            
+            <div class="aquarium-wrapper">
+                <!-- Hiasan Karang Kiri -->
+                <div class="aqua-decor decor-left">
+                    <span class="coral">🪸</span>
+                    <span class="seaweed">🌿</span>
+                    <span class="shell">🐚</span>
+                </div>
+
+                <div class="aquarium-frame">
+                    <div class="aquarium-glass">
+                        <div class="gallery-slider" id="gallery-container">
+                            <!-- Gallery items generated by JS -->
+                        </div>
+                        <!-- Foreground decorations -->
+                        <div class="aqua-grass"></div>
+                        <div class="aqua-fish fish-1">🐠</div>
+                        <div class="aqua-fish fish-2">🐟</div>
+                        <div class="aqua-fish fish-3">🐡</div>
+                        <div class="aqua-fish fish-4">🦈</div>
+                        <div class="aqua-fish fish-5">🦑</div>
+                    </div>
+                </div>
+
+                <!-- Hiasan Karang Kanan -->
+                <div class="aqua-decor decor-right">
+                    <span class="seaweed">🌿</span>
+                    <span class="coral">🪸</span>
+                    <span class="starfish">⭐</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="surprise-section" class="content-section floor-section">
+            <h3 class="section-title">One last thing...</h3>
+            <div class="big-chest-container">
+                <div class="big-chest" id="final-chest">
+                    <span class="chest-icon">🧰</span>
+                    <p>Open me?</p>
+                </div>
+                <div class="surprise-content hidden" id="surprise-content">
+                    <h2><span id="surprise-greeting-text">Selamat buat pencapaian lo</span>, <span class="personal-name">Friend</span>!</h2>
+                    <p>I hope this little ocean reminds you of how loved you are.</p>
+                    <button id="replay-btn">Replay the surprise</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW FAREWELL SECTION -->
+        <section id="farewell-section" class="content-section floor-section">
+            <div class="farewell-controls">
+                <button id="btn-start-farewell" class="farewell-btn">Mulai</button>
+                <button id="btn-replay-farewell" class="farewell-btn hidden">Ulangi</button>
+            </div>
+            
+            <div class="farewell-scene" id="farewell-scene">
+                <!-- Bright Light on the Left -->
+                <div class="bright-light" id="bright-light"></div>
+                <div class="farewell-bubbles" id="farewell-bubbles"></div>
+                
+                <!-- The 1 Fish -->
+                <span class="main-fish" id="main-fish">🐟</span>
+                
+                <!-- The 10 Fishes on the Right -->
+                                <div class="fish-group">
+                    <span style="top: -40px; left: 40px;">🐳</span>
+                    <span style="top: 0px; left: 0px;">🐙</span>
+                    <span style="top: 40px; left: 30px;">🐢</span>
+                    <span style="top: 80px; left: 70px;">🐬</span>
+                    <span style="top: -20px; left: 90px;">🦀</span>
+                    <span style="top: -60px; left: 120px;">🐡</span>
+                    <span style="top: 20px; left: 100px;">🦑</span>
+                    <span style="top: 60px; left: 130px;">🐠</span>
+                    <span style="top: -10px; left: 150px;">🐋</span>
+                    <span style="top: 30px; left: 160px;">🦐</span>
+                </div>
+            </div>
+
+            <div class="seaweed-container">
+                <div class="seaweed sw-1">🌿</div>
+                <div class="seaweed sw-2">🌿</div>
+                <div class="seaweed sw-3">🌿</div>
+                <div class="seaweed sw-4">🌿</div>
+                <div class="seaweed sw-5">🌿</div>
+            </div>
+            
+            <!-- Tambahan Jangkar dan Kapal Karam -->
+            <div class="deep-sea-props">
+                <span class="shipwreck">🛳️</span>
+                <span class="anchor">⚓</span>
+            </div>
+            
+            <div class="sand-floor"></div>
+        </section>
+
+    </main>
+
+    <div id="lightbox" class="hidden">
+        <button id="lightbox-close">✖</button>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+        <p id="lightbox-caption"></p>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <!-- MINIGAME OVERLAY -->
+    <div id="game-overlay" class="hidden">
+        <button id="btn-close-game">✖</button>
+        <div id="game-area">
+            <div id="player-salmon">🐟</div>
+        </div>
+        <div id="game-ui">
+            <h2>Cross the River!</h2>
+            <p>Gerakkan mouse untuk naik-turun. <b>Klik layar</b> untuk berenang maju ke kanan!</p>
+        </div>
+        <div id="game-win" class="hidden">
+            <h2>Cie Menang! 🎉</h2>
+            <p>You won this one. I hope you know you've won so many battles before this, too!</p>
+            <button id="btn-restart-game">Main Lagi</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+
+    <!-- REPLY OVERLAY MODAL -->
+    <div id="reply-overlay" class="hidden" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <button id="close-reply-modal" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; background: none; border: none; color: white; cursor: pointer;">❌</button>
+        <h3 class="section-title" style="margin-bottom: 10px;">Kirim Balasan 🍾</h3>
+        <p class="subtitle" style="margin-bottom: 30px;">Pesan ini akan dihanyutkan langsung ke WhatsApp author!</p>
+        <div style="position: relative; width: 90%; max-width: 500px; padding: 20px; background: rgba(2,119,189,0.5); border: 2px solid rgba(255,255,255,0.3); border-radius: 15px; backdrop-filter: blur(10px); text-align: center;">
+            <textarea id="reply-text" rows="5" placeholder="Tulis pesan rahasiamu di sini..." style="width: 100%; padding: 15px; border-radius: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.5); color: white; font-family: 'Poppins', sans-serif; font-size: 1.1rem; resize: none; outline: none; box-sizing: border-box; transition: opacity 0.5s;"></textarea>
+            <button id="send-reply-btn" class="action-btn" style="margin-top: 20px; font-size: 1.1rem; padding: 12px 30px; transition: opacity 0.5s;">Hanyutkan Botol 🌊</button>
+            
+            <div id="flying-bottle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.5); font-size: 5rem; opacity: 0; pointer-events: none; transition: all 2.5s cubic-bezier(0.25, 0.1, 0.25, 1); z-index: 10;">🍾</div>
+        </div>
+    </div>
+
+
+    <!-- JUMPSCARE OVERLAY -->
+    <div id="jumpscare-overlay" class="hidden" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: black; z-index: 9999; display: flex; justify-content: center; align-items: center;">
+        <img src="./nyawit.jpeg" style="max-width: 90vw; max-height: 90vh; object-fit: contain; animation: popout 0.2s ease-out; box-shadow: 0 0 50px red; border-radius: 20px;">
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+

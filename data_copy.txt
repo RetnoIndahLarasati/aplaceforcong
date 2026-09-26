@@ -1,0 +1,109 @@
+const oceanData = {
+    // Informasi Personal
+    name: "Cong",
+    greeting: "Happy Sumpah Profesi",
+    
+    // Pesan Utama (di dalam botol)
+    birthdayMessage: `Cong, selamat buat sumpah profesi lo yaaa! Asal looooo tau gue sebangga itu kayak SEBANGGA ITU paham gaks? Sayang aja kabar semembanggakan ini ga lu kabari ke gue langsung hiks </3 Walaupun lu merasa moment itu buat lu biasa aja tetep kabarin gue yaa, Cong. Lu hari pertama kerja aja ngabarin dengan segala struggle lo itu, kenapa yang ini ngga?! Gue kan udah pernah bilang sama lu, kabar sekecil apapun dari lu update ke gue juga (kalo bisa) coba aja lu ngasih tau ke gue lebih awal, gue pengen banget hadir di situuuu tauk :(\n\nStruggle lu buat sampe jadi lu yang sekarang gue tau ga gampang, banyak pilihan, banyak masalahnya, tapi syukurnya semua bisa lu handle dengan baik, i knowww, i trust u since day 1. Ihk agak alay tapi gue suka tiba-tiba terharu ya kenal lu dari SMA terus ke Maba Plenger, terus sekarang tiba-tiba udah Sumpah Profesi dan gue dari Bokem SMP, Anomali UTBK, sampe sekarang jadi Tiang PLN, udah grow bareng-bareng, SEBARENG ITUH.\n\nDan sekarang, lo udah sampai di titik yang dulu mungkin cuma jadi salah satu hal yang harus lo lewatin. Hari ini, lo bukan cuma selesai dari satu proses, tapi juga udah mulai satu perjalanan baru sebagai seorang profesional (ancis). Sumpah yang lo ucapin hari ini gue harap bukan cuma sekedar seremoni atau formalitas, tapi jadi sesuatu yang bakal lo inget setiap kali nanti ketemu hari-hari yang susah dalam perjalanan profesi lo.\n\nOlah semua mulai dari ilmu, perjuangan, dan semua hal yang udah lo lewatin sampai di titik ini buat jadi bekal buat lo ke depannya. Semoga lo selalu jadi orang yang tetap punya hati di tengah kesibukan, tetap inget alasan kenapa lo mulai di awal, dan yang ga kalah penting, bangga sama diri lo sendiri meskipun nanti jalannya nggak selalu gampang.\n\nSo, congrats ya Conggg. You really made it. Gue bangga banget bisa ngeliat salah satu fase hidup lo sampai sejauh ini, dan semoga gue masih dikasih umur dan kesemparan untuk terus denger cerita-cerita lo di fase-fase berikutnya. Dari struggle, cerita anomali lo itu, sampe ke TMI yang menurut lo mungkin nggak penting penting bgt ntuh, kabarin gue terus yaaa. Karena buat gue, cerita dari lo nggak pernah sekecil itu!\n\nKedepannya lu sakses selalu ya, apapun yang lu laluin, apapun yang lu rasain, berbagi ke orang-orang ya cong. Jangan semua muanya di keep sendiri, jangan sombonggg lu kuat dan segala macem, cuma lu sendiri yang tau keadaan dan kapasitas lu sendiri, okeh?\n\nOmongan gue selanjutnya mungkin bakal klasik dan basi banget buat diucapin. Tapi beneran deh, lu tuh udah gue anggep kayak kakak sendiri, yang beneran kakak. Walaupun baru ketemu 2 kali dan cuma ngehabisin waktu di RL total sekitar 5-6 hari tapi semua waktu yang dihabisin sama lu bener-bener meaningful banget buat gue.\n\nMakasih cong udaah ada❤️`,
+
+    // Kenangan / Memories (Ikan bawa Polaroid)
+    memories: [
+        {
+            image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=500&q=80",
+            date: "12 August 2023",
+            caption: "one of my favorite days"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=500&q=80",
+            date: "25 December 2023",
+            caption: "still makes me smile"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1494548162494-384bba4ab999?w=500&q=80",
+            date: "01 January 2024",
+            caption: "a memory I’ll always keep"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&q=80",
+            date: "14 February 2024",
+            caption: "best trip ever!"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=500&q=80",
+            date: "05 March 2024",
+            caption: "silly moments 🤪"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=300&q=80",
+            caption: "Tawa tak terlupakan",
+            date: "Sometime"
+        }
+    ],
+
+    // Alasan kenapa dia spesial (Kerang Mutiara)
+    reasons: [
+        "Temen overthinking tengah malam paling the best.",
+        "Sabar banget dengerin cerita randomku.",
+        "Udah kayak kakak gue sendiri beneran deh.",
+        "Selalu bisa handle masalah dengan baik."
+    ],
+
+    // Doa dan Harapan (Ubur-ubur Bercahaya)
+    wishes: [
+        "Selalu dikelilingi orang-orang baik yang tulus ke lo.",
+        "Dimudahkan segala proses perjalanan karier lo.",
+        "Bisa selalu punya kualitas istirahat yang baik.",
+        "Jangan lupa mabar rosblok sama gue, Al, Kari, dan Abil yah!"
+    ],
+
+    // Galeri Foto Aquarium (Slider) - 8 Foto
+    gallery: [
+        { image: "./foto11.jpeg", caption: "Photo 1" },
+        { image: "./foto6.jpeg", caption: "Photo 2" },
+        { image: "./foto3.jpeg", caption: "Photo 3" },
+        { image: "./foto14.jpeg", caption: "Photo 4" },
+        { image: "./foto14.jpeg", caption: "Photo 4" },
+        { image: "./foto14.jpeg", caption: "Photo 4" },
+        { image: "./foto14.jpeg", caption: "Photo 4" },
+        { image: "./foto14.jpeg", caption: "Photo 4" }
+    ]
+
+    // Chat Screenshots
+     [
+        "./CHAT JO.jpeg",
+        "./CHAT ABIL1.jpeg",
+        "./CHAT ABIL2.jpeg",
+        "./CHAT ABIL3.jpeg",
+        "./CHAT ABIL3.jpeg"
+    ],
+
+    // Playlist Music
+    playlist: [
+        {
+            title: "Every Breath You Take",
+            artist: "The Police",
+            file: "./song.webm",
+            cover: "https://i.pinimg.com/1200x/e4/ea/dc/e4eadc717b076e0987ff0c2e17cfe8bc.jpg"
+        },
+        {
+            title: "Night Changes",
+            artist: "One Direction",
+            file: "./night_changes.webm",
+            cover: "https://i.pinimg.com/1200x/7b/8a/10/7b8a10bde0edfc1575c35bd82c57b4a0.jpg"
+        },
+        {
+            title: "18",
+            artist: "One Direction",
+            file: "./18.webm",
+            cover: "https://i.pinimg.com/736x/2f/36/66/2f366608426235cd640ad33304a57389.jpg"
+        },
+        {
+            title: "Count On Me",
+            artist: "Bruno Mars",
+            file: "./count_on_me.webm",
+            cover: "https://i.pinimg.com/1200x/cd/1a/78/cd1a78309cf23662dbbc82d6edd2e432.jpg"
+        }
+    ]
+};
+
+
