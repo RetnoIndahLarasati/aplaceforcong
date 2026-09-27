@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 // --- UBAH NOMER WA DI BAWAH INI ---
-                const noWA = "6280000000000"; 
+                const noWA = "6287781849128"; 
                 const waLink = `https://wa.me/${noWA}?text=${encodeURIComponent("🍾 *Pesan Botol dari Dasar Laut (Ocong)* 🍾\\n\\n" + msg)}`;
                 window.open(waLink, '_blank');
                 
